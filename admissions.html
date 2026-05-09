@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uru Minor Seminary | Admissions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admission.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Uru Minor Seminary</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Heritage</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-secondary" style="background-image: url('picha/admissions.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow">Applications Open</span>
+        <h1>Admissions & Application Process</h1>
+        <p>Begin the next chapter with a seminary that fosters scholarship, discipline, and vocation.</p>
+      </div>
+    </section>
+
+    <section class="section admissions-intro">
+      <div class="container">
+        <p class="section-label">Admissions</p>
+        <h2>Complete Your Admission Application</h2>
+        <div class="divider"><span>✝</span></div>
+        <p>Follow the three-step application process. Required fields are marked and validated before submission.</p>
+        <!-- EDIT THIS: Adjust admissions instructions or deadlines as required. -->
+      </div>
+    </section>
+
+    <section class="section form-section">
+      <div class="container admission-container">
+        <div class="progress-bar">
+          <div class="progress-step active" data-step="1">Personal</div>
+          <div class="progress-step" data-step="2">Academic</div>
+          <div class="progress-step" data-step="3">Declaration</div>
+        </div>
+
+        <form id="admissionForm" action="process_admission.php" method="post" class="admission-form">
+          <div class="form-step form-step-active" data-step="1">
+            <div class="field-group">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" required placeholder="First name" />
+            </div>
+            <div class="field-group">
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" required placeholder="Last name" />
+            </div>
+            <div class="field-group">
+              <label for="date_of_birth">Date of Birth</label>
+              <input type="date" id="date_of_birth" name="date_of_birth" required />
+            </div>
+            <div class="field-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            </div>
+            <div class="field-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+255 7XX XXX XXX" />
+            </div>
+            <div class="field-group full-width">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" rows="3" required placeholder="Home address"></textarea>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <div class="field-group full-width">
+              <label for="previous_school">Previous School</label>
+              <input type="text" id="previous_school" name="previous_school" required placeholder="Name of school" />
+            </div>
+            <div class="field-group full-width">
+              <label for="subjects">Subjects</label>
+              <input type="text" id="subjects" name="subjects" required placeholder="Mathematics, English, Theology" />
+            </div>
+            <div class="field-group">
+              <label for="level_applying">Level Applying</label>
+              <select id="level_applying" name="level_applying" required>
+                <option value="">Choose level</option>
+                <option>O-Level</option>
+                <option>A-Level</option>
+                <option>Spiritual Formation</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <div class="field-group full-width">
+              <label for="declaration">Declaration</label>
+              <textarea id="declaration" name="declaration" rows="6" required placeholder="I declare that the information is true and complete."></textarea>
+            </div>
+            <p class="note">By submitting this application, you affirm your intent to honor the values of Uru Minor Seminary.</p>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Next Step</button>
+            <button type="submit" class="btn btn-primary hidden" id="submitBtn">Submit Application</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Admissions Office</h3>
+        <p>For support, contact our admissions team by email or phone.</p>
+      </div>
+      <div>
+        <p><strong>Email</strong><br /><a href="mailto:admissions@uruminorseminary.ac.tz">admissions@uruminorseminary.ac.tz</a></p>
+        <p><strong>Phone</strong><br />+255 27 123 4568</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Uru Minor Seminary. All rights reserved.</p>
+  </footer>
+</body>
+</html>
